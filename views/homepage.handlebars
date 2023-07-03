@@ -1,0 +1,12 @@
+<!-- Loop over each post and render its details -->
+{{#each posts as |post| }}
+<div class="post">
+  <h2>{{post.name}}</h2>
+  <p>{{post.description}}</p>
+  <p>Created on {{format_date post.date_created}}</p>
+  <p>Created by: {{post.user.name}}</p>
+</div>
+{{/each}}
+
+
+
