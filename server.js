@@ -4,6 +4,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const path = require('path');
+const moment = require('moment');
 
 
 // Sets up the Express App
@@ -24,3 +25,9 @@ app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
 });
 
+
+
+// Register the format_date helper
+hbs.handlebars.registerHelper('format_date', (date) => {
+  return moment(date).format('MMM DD, YYYY');
+});
