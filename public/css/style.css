@@ -1,3 +1,5 @@
+/* styles.css */
+
 .container {
   height: 100px;
   background-color: #f2f2f2;
@@ -27,14 +29,15 @@
 }
 
 .nav-link {
-    color: #333;
-    text-decoration: none;
-    font-size: 25px;
-    transition: color 0.3s;
+  color: #333;
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s;
+  padding: 5px 10px;
 }
 
 .nav-link:hover {
-    color: #ff5500;
+  color: #ff5500;
 }
 
 h1 {
@@ -54,5 +57,58 @@ h1 a {
   font-weight: bold;
 }
 
+.post,
+.comment {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
 
+.post:hover {
+  background-color: #ddd;
+}
 
+.post h2,
+.comment h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.post h2:hover {
+  color: #ff5500;
+  cursor: pointer;
+}
+
+.post-details {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.created-by,
+.created-on {
+  margin: 0;
+}
+
+.created-by {
+  background-color: #ffcc00;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.created-on {
+  background-color: #99ccff;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+h3 {
+  padding-left: 130px;
+}

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -20,5 +20,28 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postId = req.params.id; 
+
+    //fetch the post and its comments
+    const postData = await Post.findByPk(postId, {
+      include: [{ model: Comment, include: [{ model: User }] }],
+    });
+    //render the post.handlebars templete and pass the post and coments data
+    res.render('post', {
+      post: postData.toJSON(),
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
+
+
+
+
+
 
