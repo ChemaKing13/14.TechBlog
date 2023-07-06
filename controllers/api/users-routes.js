@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { User } = require('../../models');
 
 //route to create a new user 
 router.post('/', async (req, res) => {
@@ -20,6 +21,18 @@ router.post('/', async (req, res) => {
         res.status(400).json(err); 
     }
 }); 
+
+router.get('/users', async (req, res) => {
+    try {
+      // Access the user data from the previous route
+      const users = await User.findAll();
+  
+      res.status(200).json(users);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
+});
 
 
 module.exports = router;
