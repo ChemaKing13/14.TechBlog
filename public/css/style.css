@@ -72,14 +72,14 @@ h1 a {
   background-color: #ddd;
 }
 
-.post h2,
+.post h2 a,
 .comment h2 {
   color: #333;
   font-size: 20px;
   margin-bottom: 5px;
 }
 
-.post h2:hover {
+.post h2 a:hover {
   color: #ff5500;
   cursor: pointer;
 }
@@ -111,4 +111,91 @@ h1 a {
 
 h3 {
   padding-left: 130px;
+}
+
+.signUpBackground {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.login-box {
+  max-width: 350px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #999;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #ff5500;
+}
+
+button[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background: #ff5500;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button[type="submit"]:hover {
+  background: #ff7733;
+}
+
+.sign-up {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.sign-up a {
+  color: #ff5500;
+  text-decoration: none;
 }
