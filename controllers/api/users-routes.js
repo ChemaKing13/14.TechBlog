@@ -29,5 +29,29 @@ router.get('/users', async (req, res) => {
     }
 });
 
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { name: req.body.name } });
+
+    if (!userData) {
+      return res.status(400).json({ error: 'Invalid credentials' }); 
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      return res.status(400).json({ error: 'Invalid credentials' });
+    }
+    
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true; 
+      req.session.name = userData.name; 
+      res.json({ user: userData });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
