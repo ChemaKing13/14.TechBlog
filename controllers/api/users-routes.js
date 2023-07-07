@@ -3,25 +3,20 @@ const { User } = require('../../models');
 
 //route to create a new user 
 router.post('/', async (req, res) => {
-    console.log('Request received to create a new user', req.body);
-
     try {
-        const userData = await User.create(req.body); 
+        // const { name, email, password } = req.body; 
+        const userData = await User.create({ 
+          name: req.body.name, email: req.body.email, password: req.body.password });   
+          console.log(userData); 
 
-        console.log('User created', userData);
-
-        req.session.user_id = userData.id;
-        req.session.logged_in = true; 
-        req.session.name = userData.name; 
-
-        console.log('Session data saved'); 
-
+        res.status(200).json(userData);
     } catch (err) {
-        console.log('Error creating user:', err);
-        res.status(400).json(err); 
+        res.status(400).json(err);
     }
-}); 
+});
 
+
+//retrieve all the users in the database 
 router.get('/users', async (req, res) => {
     try {
       // Access the user data from the previous route
