@@ -31,16 +31,13 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8],
-            },
         },
     },
     {
         hooks: {
-            beforeCreate: async (newUserData) => {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
+            beforeCreate: async (user) => {
+                user.password = await bcrypt.hash(user.password, 10);
+                return user;
             },
             beforeUpdate: async (updatedUserData) => {
                 updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
@@ -51,7 +48,7 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'User',
     }
 );
 
