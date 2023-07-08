@@ -293,3 +293,19 @@ button[type="submit"]:hover {
 .login a:hover {
   color: #ff5500;
 }
+
+.new-post-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff5500;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.new-post-btn:hover {
+  background-color: #ff7733;
+  cursor: pointer;
+}

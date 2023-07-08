@@ -31,7 +31,7 @@ router.get('/users', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { name: req.body.name } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       return res.status(400).json({ error: 'Invalid credentials' }); 
@@ -53,5 +53,18 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+//logout route 
+router.post('/logout', (req, res) => {
+  console.log('login out', req.session.logged_in)
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 
 module.exports = router;
