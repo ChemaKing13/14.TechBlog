@@ -13,7 +13,8 @@ TechBlog is a web application that allows users to share and discuss technology-
 - [Demo](#demo)
 
 
-## Built with
+## Built with 🛠️
+
 - ![Node.js](https://img.shields.io/badge/Node.js-14.x-green)
 - ![Express.js](https://img.shields.io/badge/Express.js-4.x-blue)
 - ![Sequelize](https://img.shields.io/badge/Sequelize-6.x-orange)
