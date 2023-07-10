@@ -21,7 +21,7 @@ TechBlog is a web application that allows users to share and discuss technology-
 - ![Handlebars](https://img.shields.io/badge/Handlebars-4.x-yellow)
 - ![MySQL](https://img.shields.io/badge/MySQL-8.x-blue)
 
-## Installation 
+## Installation ⚙️
 
 1. Clone the repository: `git clone https://github.com/your-username/tech-blog.git`
 2. Navigate to the project directory: `cd tech-blog`
@@ -33,14 +33,14 @@ TechBlog is a web application that allows users to share and discuss technology-
    - (Optional) Seed the database with sample data: `npx sequelize-cli db:seed:all`
 5. Start the application: `npm start`
 
-## Usage
+## Usage 🚀
 
 - Access the application in a web browser at `http://localhost:3001`.
 - Register a new account or log in with an existing one.
 - Create new blog posts, comment on posts, and interact with other users.
 - Manage your posts from the dashboard.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
@@ -50,9 +50,15 @@ Contributions are welcome! If you would like to contribute to this project, plea
 4. Push to the branch: `git push origin my-feature`.
 5. Submit a pull request.
 
-## License 
+## License 📄
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-## Deployed App
+## Deployed App 🎥
 Check out the deployed app [here](https://calm-mesa-92198-1a0c8f2e67f9.herokuapp.com/).
+
+## Demo 
+<img width="1440" alt="Screenshot 2023-07-10 at 16 27 24" src="https://github.com/ChemaKing13/14.TechBlog/assets/124849302/4e0a3ed5-7007-4026-876b-01464807d1a9">
+
+<img width="1440" alt="Screenshot 2023-07-10 at 16 27 41" src="https://github.com/ChemaKing13/14.TechBlog/assets/124849302/a6fdc061-9791-4920-958b-6e482cca79a8">
+
