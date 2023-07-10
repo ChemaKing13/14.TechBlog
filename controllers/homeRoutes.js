@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     });
     const posts = postData.map((post) => post.get({ plain: true}));
 
-    res.render('homepage', { posts }); // Pass the posts variable to the template
+    res.render('homepage', { posts, name: req.session.name, logged_in: req.session.logged_in }); // Pass the posts variable to the template
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -45,11 +45,22 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render('login')
+  res.render('login', { name: req.session.name, logged_in: req.session.logged_in });
 }); 
 
 router.get('/signup', (req, res) => {
-  res.render('signup')
+  res.render('signup', { name: req.session.name, logged_in: req.session.logged_in });
+});
+
+//logout route
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;
