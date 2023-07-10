@@ -31,6 +31,12 @@ const sess = {
   })
 };
 app.use(session(sess));
+
+// Register the format_date helper
+hbs.handlebars.registerHelper('format_date', (date) => {
+  return moment(date).format('MMM DD, YYYY');
+});
+
 // The following two lines of code are setting Handlebars.js as the default template engine.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -48,8 +54,5 @@ app.listen(PORT, () => {
 
 
 
-// Register the format_date helper
-hbs.handlebars.registerHelper('format_date', (date) => {
-  return moment(date).format('MMM DD, YYYY');
-});
+
 
