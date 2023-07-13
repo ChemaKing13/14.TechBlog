@@ -9,6 +9,7 @@ TechBlog is a web application that allows users to share and discuss technology-
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Credits](#credits)
 - [License](#license)
 - [Demo](#demo)
 
@@ -49,6 +50,18 @@ Contributions are welcome! If you would like to contribute to this project, plea
 3. Make your changes and commit them: `git commit -m "Add a new feature"`.
 4. Push to the branch: `git push origin my-feature`.
 5. Submit a pull request.
+
+In order to complete this challenge, I applied the knowledge seen in class, as well as additional resources from the Internet, such as articles and videos. 
+
+- https://coolors.co/bf4e30-c6ccb2-093824-e5eafa-78fecf
+- https://handlebarsjs.com
+- https://coolors.co/bf4e30-c6ccb2-093824-e5eafa-78fecf
+- https://learn.mongodb.com
+- https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku
+- https://devcenter.heroku.com/articles/git
+- https://handlebarsjs.com/guide/builtin-helpers.html
+
+
 
 ## License 📄
 
